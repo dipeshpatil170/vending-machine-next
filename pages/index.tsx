@@ -17,7 +17,7 @@ const Home: NextPage = () => {
 
    const [balanceAmount, setBalanceAmount] = useState<Ibalance>()
 
-   const moneyPannel: number[] = [5, 10, 20, 30, 50, 100, 500]
+   const moneyPannel: number[] = [5, 10, 20, 30, 50, 100]
 
    const products = useSWR<IProduct[], Error>('products', fetchProducts)
 
@@ -54,6 +54,10 @@ const Home: NextPage = () => {
       }, 1000)
    }
 
+   const handleReturnProduct = (purchasedProduct: IPurchasedProduct) => {
+      console.log('Product to be return >> ', purchasedProduct)
+   }
+
    return (
       <>
          <div className="md:container md:mx-auto">
@@ -87,6 +91,7 @@ const Home: NextPage = () => {
                         <li className="font-semibold">
                            <PurchasedProducts
                               purchasedProducts={purchasedProducts}
+                              handleReturnProduct={handleReturnProduct}
                            />
                         </li>
                      )}

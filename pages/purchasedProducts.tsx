@@ -4,9 +4,13 @@ import PurchasedProduct from '../components/PurchasedProduct'
 
 interface Props {
    purchasedProducts: SWRResponse<IPurchasedProduct[], Error>
+   handleReturnProduct: Function
 }
 
-const PurchasedProducts = ({ purchasedProducts }: Props) => {
+const PurchasedProducts = ({
+   purchasedProducts,
+   handleReturnProduct,
+}: Props) => {
    const { data, error } = purchasedProducts
    return (
       <>
@@ -22,6 +26,7 @@ const PurchasedProducts = ({ purchasedProducts }: Props) => {
                         <PurchasedProduct
                            key={purchasedProduct.id}
                            purchasedProduct={purchasedProduct}
+                           handleReturnProduct={handleReturnProduct}
                         />
                      )
                   })}

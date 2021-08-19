@@ -3,7 +3,7 @@
       {
          "name": "Salad",
          "price": 10,
-         "quantity": 5,
+         "quantity": 2,
          "image": "/salad.jpg",
          "id": 1,
          "productId": 1
@@ -32,7 +32,32 @@
       }
    ],
    "balance": {
-      "amount": 5
+      "amount": 990
    },
-   "purchasedproducts": []
+   "purchasedproducts": [
+      {
+         "productId": 1,
+         "name": "Salad",
+         "price": 10,
+         "quantity": 1,
+         "image": "/salad.jpg",
+         "id": 1
+      },
+      {
+         "productId": 1,
+         "name": "Salad",
+         "price": 10,
+         "quantity": 1,
+         "image": "/salad.jpg",
+         "id": 2
+      },
+      {
+         "productId": 1,
+         "name": "Salad",
+         "price": 10,
+         "quantity": 1,
+         "image": "/salad.jpg",
+         "id": 3
+      }
+   ]
 }

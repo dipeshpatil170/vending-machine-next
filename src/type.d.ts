@@ -23,3 +23,5 @@ type IPurchasedProductS = {
    quantity: number
    image: any
 }
+
+const TIME_OUT_MS = 1000

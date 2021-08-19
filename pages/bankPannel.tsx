@@ -1,4 +1,5 @@
 import React from 'react'
+import MoneyButtons from '../components/MoneyButtons'
 
 interface Props {
    moneyPannel: number[]
@@ -13,17 +14,14 @@ const BankPannel = ({ moneyPannel, handleAddMoneyToWallet }: Props) => {
                Bank Amount Pannel
             </h1>
             <hr />
-            <div className="grid grid-cols-9 gap-4 text-center mt-2">
-               {moneyPannel.map((ruppes, index) => {
+            <div className="grid grid-cols-6 gap-4 text-center mt-2">
+               {moneyPannel.map((ruppes) => {
                   return (
-                     <button
-                        onClick={() => handleAddMoneyToWallet(ruppes)}
-                        key={index}
-                        className="p-1 text-white bg-blue-500 rounded font-bold"
-                     >
-                        {' '}
-                        ₹ {ruppes}
-                     </button>
+                     <MoneyButtons
+                        key={ruppes}
+                        ruppes={ruppes}
+                        handleAddMoneyToWallet={handleAddMoneyToWallet}
+                     />
                   )
                })}
             </div>
