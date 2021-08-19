@@ -14,7 +14,10 @@ a {
 * {
   box-sizing: border-box;
 }
-
+li{
+  margin-top: 6%
+}
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
