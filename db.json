@@ -1,40 +1,38 @@
 {
-  "products": [
-    {
-      "name": "Salad",
-      "price": 10,
-      "quantity": 5,
-      "image": "/salad.jpg",
-      "id": 1,
-      "productId": 1
-    },
-    {
-      "name": "Ice Apples",
-      "price": 20,
-      "quantity": 7,
-      "image": "/salad.jpg",
-      "id": 2
-    },
-    {
-      "name": "Sweets",
-      "price": 30,
-      "quantity": 10,
-      "image": "/salad.jpg",
-      "id": 3
-    },
-    {
-      "name": "Sandwich",
-      "price": 40,
-      "quantity": 8,
-      "image": "/salad.jpg",
-      "id": 4,
-      "productId": 4
-    }
-  ],
-  "balance": {
-    "amount": 5
-  },
-  "purchasedproducts": [
-   
-  ]
+   "products": [
+      {
+         "name": "Salad",
+         "price": 10,
+         "quantity": 5,
+         "image": "/salad.jpg",
+         "id": 1,
+         "productId": 1
+      },
+      {
+         "name": "Ice Apples",
+         "price": 20,
+         "quantity": 7,
+         "image": "/salad.jpg",
+         "id": 2
+      },
+      {
+         "name": "Sweets",
+         "price": 30,
+         "quantity": 10,
+         "image": "/salad.jpg",
+         "id": 3
+      },
+      {
+         "name": "Sandwich",
+         "price": 40,
+         "quantity": 8,
+         "image": "/salad.jpg",
+         "id": 4,
+         "productId": 4
+      }
+   ],
+   "balance": {
+      "amount": 5
+   },
+   "purchasedproducts": []
 }
