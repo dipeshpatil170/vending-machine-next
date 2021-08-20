@@ -1,6 +1,6 @@
 import React from 'react'
 import { SWRResponse } from 'swr'
-import Product from '../components/Product'
+import Product from '../container/Product'
 interface Props {
    products: SWRResponse<IProduct[], Error>
    balance: Ibalance
@@ -31,7 +31,9 @@ const Products = ({ products, handleBuyProduct, balance }: Props) => {
                         )
                      })}
                </div>
-               {error && <p className="text-red-500">{error?.message}</p>}
+               {error && (
+                  <p className="text-red-500 font-bold">{`Products not Found : ${error?.message}`}</p>
+               )}
             </div>
          </div>
       </>

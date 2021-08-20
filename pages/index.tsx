@@ -1,9 +1,14 @@
 import type { NextPage } from 'next'
 import { useEffect, useState } from 'react'
 import useSWR from 'swr'
-import { addBalance, fetchBalance } from './api/balanceApi'
-import { fetchProducts } from './api/productsApi'
-import { buyProduct, fetchPurchasedProduct } from './api/purchasedProductApi'
+import {
+   addBalance,
+   buyProduct,
+   fetchBalance,
+   fetchProducts,
+   fetchPurchasedProduct,
+   returnProduct,
+} from './api/productsApi'
 import BankPannel from './bankPannel'
 import Products from './products'
 import PurchasedProducts from './purchasedProducts'
@@ -11,9 +16,6 @@ import Wallet from './wallet'
 
 const Home: NextPage = () => {
    const [isBalanceLoading, setIsBalanceLoading] = useState<boolean>(false)
-
-   const [isBuyProductLoading, setIsBuyProductLoading] =
-      useState<boolean>(false)
 
    const [balanceAmount, setBalanceAmount] = useState<Ibalance>()
 
@@ -34,7 +36,8 @@ const Home: NextPage = () => {
 
    const handleAddMoneyToWallet = (amount: number) => {
       setIsBalanceLoading(true)
-      addBalance(amount)
+      const addbalance = addBalance(amount)
+      console.log('addbalance ', addbalance)
 
       setTimeout(() => {
          balance.revalidate()
@@ -43,19 +46,23 @@ const Home: NextPage = () => {
    }
 
    const handleBuyProduct = (product: IProduct) => {
-      setIsBuyProductLoading(true)
       buyProduct(product)
 
       setTimeout(() => {
          products.revalidate()
          purchasedProducts.revalidate()
          balance.revalidate()
-         setIsBuyProductLoading(false)
       }, 1000)
    }
 
    const handleReturnProduct = (purchasedProduct: IPurchasedProduct) => {
-      console.log('Product to be return >> ', purchasedProduct)
+      returnProduct(purchasedProduct)
+
+      setTimeout(() => {
+         products.revalidate()
+         purchasedProducts.revalidate()
+         balance.revalidate()
+      }, 1000)
    }
 
    return (
@@ -87,14 +94,16 @@ const Home: NextPage = () => {
                            handleAddMoneyToWallet={handleAddMoneyToWallet}
                         />
                      </li>
-                     {purchasedProducts && (
-                        <li className="font-semibold">
-                           <PurchasedProducts
-                              purchasedProducts={purchasedProducts}
-                              handleReturnProduct={handleReturnProduct}
-                           />
-                        </li>
-                     )}
+                     {purchasedProducts &&
+                        purchasedProducts.data &&
+                        purchasedProducts.data?.length > 0 && (
+                           <li className="font-semibold">
+                              <PurchasedProducts
+                                 purchasedProducts={purchasedProducts}
+                                 handleReturnProduct={handleReturnProduct}
+                              />
+                           </li>
+                        )}
                   </ul>
                </div>
             </div>

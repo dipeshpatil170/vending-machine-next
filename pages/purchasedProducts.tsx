@@ -1,6 +1,6 @@
 import React from 'react'
 import { SWRResponse } from 'swr'
-import PurchasedProduct from '../components/PurchasedProduct'
+import PurchasedProduct from '../container/PurchasedProduct'
 
 interface Props {
    purchasedProducts: SWRResponse<IPurchasedProduct[], Error>

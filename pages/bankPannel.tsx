@@ -1,5 +1,5 @@
 import React from 'react'
-import MoneyButtons from '../components/MoneyButtons'
+import MoneyButtons from '../container/MoneyButtons'
 
 interface Props {
    moneyPannel: number[]

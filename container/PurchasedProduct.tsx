@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
-import BounceProgressBubble from './BounceProgressBubble'
+import BounceProgressBubble from '../components/BounceProgressBubble'
 
 interface Props {
    purchasedProduct: IPurchasedProduct

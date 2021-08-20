@@ -18,7 +18,7 @@ const Wallet = ({ balance, isBalanceLoading }: Props) => {
             </h1>
             <hr />
             {error ? (
-               <p className="text-red-500">{error?.message}</p>
+               <p className="text-red-500 font-bold">{`Balance not found : ${error?.message}.`}</p>
             ) : isBalanceLoading ? (
                <h2 className="m-auto  font-center font-small leading-small mt-0 mb-2 text-black-800">
                   Updating Wallet 😀
