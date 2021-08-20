@@ -34,15 +34,16 @@ const Home: NextPage = () => {
       setBalanceAmount(balance.data)
    }, [balance])
 
-   const handleAddMoneyToWallet = (amount: number) => {
+   const handleAddMoneyToWallet = async (amount: number) => {
       setIsBalanceLoading(true)
-      const addbalance = addBalance(amount)
-      console.log('addbalance ', addbalance)
+      const addbalance = await addBalance(amount)
 
-      setTimeout(() => {
-         balance.revalidate()
-         setIsBalanceLoading(false)
-      }, 1000)
+      if (addbalance?.status === 200) {
+         setTimeout(() => {
+            balance.revalidate()
+            setIsBalanceLoading(false)
+         }, 1000)
+      }
    }
 
    const handleBuyProduct = (product: IProduct) => {
@@ -68,6 +69,11 @@ const Home: NextPage = () => {
    return (
       <>
          <div className="md:container md:mx-auto">
+            <div className="flex justify-center m-0 p-0">
+               <h2 className="text-3xl font-center font-normal leading-normal  text-pink-800">
+                  Vending Machine
+               </h2>
+            </div>
             <div className="flex">
                <div className="flex-1">
                   {products && balanceAmount && (

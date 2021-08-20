@@ -19,13 +19,12 @@ export const fetchPurchasedProduct = async () => {
 
 export const addBalance = async (amount: number) => {
    const existingBalance = await apiConfig.get<Ibalance>('balance')
-
    if (existingBalance.status === 200) {
       const newBalance = existingBalance.data?.amount + amount
       const response = await apiConfig.patch<Ibalance>('balance', {
          amount: newBalance,
       })
-      return response.data
+      return response
    }
 }
 

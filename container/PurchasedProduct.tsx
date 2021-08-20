@@ -19,14 +19,14 @@ const PurchasedProduct = ({ purchasedProduct, handleReturnProduct }: Props) => {
    }
 
    return (
-      <div className="box-border p-2 border-2 w-1/4">
+      <div className="box-border p-2 border-2">
          <ul className="list-none">
             <li>
                <Image
                   src={purchasedProduct.image}
                   alt={purchasedProduct.image}
                   layout="responsive"
-                  height="100%"
+                  height="60%"
                   width="100%"
                />
             </li>

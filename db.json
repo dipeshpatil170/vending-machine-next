@@ -3,7 +3,7 @@
       {
          "name": "Salad",
          "price": 10,
-         "quantity": 9,
+         "quantity": 1,
          "image": "/salad.jpg",
          "id": 1,
          "productId": 1
@@ -32,7 +32,7 @@
       }
    ],
    "balance": {
-      "amount": 65
+      "amount": 145
    },
    "purchasedproducts": []
 }
